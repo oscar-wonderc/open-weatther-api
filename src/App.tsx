@@ -15,7 +15,6 @@ function App(): JSX.Element {
     <Router>
       <div>
         <Header />
-
         <Switch>
           <Route exact path="/favorites">
             <Favorites />
