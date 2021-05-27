@@ -22,9 +22,7 @@ function App(): JSX.Element {
           <Route exact path="/">
             <Weather />
           </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>

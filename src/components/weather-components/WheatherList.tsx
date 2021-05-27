@@ -32,10 +32,14 @@ export default function WheatherList(props: IProps): JSX.Element {
   const newCities = favoriteCitiesFromLocalStorage || [];
 
   const addFavorite = (id: number): void => {
-    const singleCity: any = cities.find((citie) => citie.id === id);
+    const singleCity: City | undefined = cities.find(
+      (citie) => citie.id === id
+    );
 
-    if (newCities.some((city: City) => city.id === singleCity.id)) {
-      return;
+    if (singleCity) {
+      if (newCities.some((city: City) => city.id === singleCity.id)) {
+        return;
+      }
     }
 
     newCities.push(singleCity);
