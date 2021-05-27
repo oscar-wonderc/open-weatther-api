@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
@@ -25,11 +20,8 @@ function App(): JSX.Element {
           <Route exact path="/favorites">
             <Favorites />
           </Route>
-          <Route exact path="/weather">
-            <Weather />
-          </Route>
           <Route exact path="/">
-            <Redirect to="/weather" />
+            <Weather />
           </Route>
           <Route path="*">
             <NotFound />
